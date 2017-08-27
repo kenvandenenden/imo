@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iMO.xcodeproj">
+      location = "self:/Users/kenvandenenden/Code/kvdenden/imo/iMO/iMO.xcodeproj">
    </FileRef>
 </Workspace>

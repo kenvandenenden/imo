@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EAB2DE438BA7A5196F82964 /* Pods_iMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633B3753F94267D032FE3F9 /* Pods_iMO.framework */; };
+		AC0B9F041F4D2F5C00179E92 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B9F031F4D2F5C00179E92 /* API.swift */; };
+		AC0B9F061F4D30BE00179E92 /* Work.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AC0B9F051F4D30BE00179E92 /* Work.graphql */; };
+		AC1A9FC21F4BF6410012DA25 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */; };
+		AC1A9FC61F4C48FB0012DA25 /* WorkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */; };
+		AC1A9FCA1F4D00090012DA25 /* RecommendationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */; };
+		ACD1622B1F4FD253005005F9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622A1F4FD253005005F9 /* FeedViewController.swift */; };
+		ACD1622D1F4FF365005005F9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */; };
+		ACD1622F1F4FFE58005005F9 /* WorkCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */; };
+		ACE74E0E1F4EA36100FEBD49 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E0D1F4EA36100FEBD49 /* Brain.swift */; };
+		ACE74E121F4FB0CC00FEBD49 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */; };
 		ACE96E771F4BE660002E0809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E761F4BE660002E0809 /* AppDelegate.swift */; };
-		ACE96E791F4BE660002E0809 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E781F4BE660002E0809 /* ViewController.swift */; };
 		ACE96E7C1F4BE660002E0809 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE96E7A1F4BE660002E0809 /* Main.storyboard */; };
 		ACE96E7E1F4BE660002E0809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE96E7D1F4BE660002E0809 /* Assets.xcassets */; };
 		ACE96E811F4BE660002E0809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE96E7F1F4BE660002E0809 /* LaunchScreen.storyboard */; };
+		ACE96E891F4BECD9002E0809 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E881F4BECD9002E0809 /* Work.swift */; };
+		ACE96E8B1F4BEE05002E0809 /* WorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E8A1F4BEE05002E0809 /* WorkRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54251A728D51FCDBCE44D1CA /* Pods-iMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMO/Pods-iMO.debug.xcconfig"; sourceTree = "<group>"; };
+		9633B3753F94267D032FE3F9 /* Pods_iMO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0B9F031F4D2F5C00179E92 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AC0B9F051F4D30BE00179E92 /* Work.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Work.graphql; sourceTree = "<group>"; };
+		AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
+		AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationRepository.swift; sourceTree = "<group>"; };
+		ACD1622A1F4FD253005005F9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionReusableView.swift; sourceTree = "<group>"; };
+		ACE74E0D1F4EA36100FEBD49 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
+		ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		ACE96E731F4BE660002E0809 /* iMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE96E761F4BE660002E0809 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACE96E781F4BE660002E0809 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ACE96E7B1F4BE660002E0809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACE96E7D1F4BE660002E0809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE96E801F4BE660002E0809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACE96E821F4BE660002E0809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE96E881F4BECD9002E0809 /* Work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		ACE96E8A1F4BEE05002E0809 /* WorkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkRepository.swift; sourceTree = "<group>"; };
+		F0D960544F968F6BDAA26527 /* Pods-iMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMO.release.xcconfig"; path = "Pods/Target Support Files/Pods-iMO/Pods-iMO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EAB2DE438BA7A5196F82964 /* Pods_iMO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BB2ACDD5C3FE571D326BD1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54251A728D51FCDBCE44D1CA /* Pods-iMO.debug.xcconfig */,
+				F0D960544F968F6BDAA26527 /* Pods-iMO.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ACE96E6A1F4BE660002E0809 = {
 			isa = PBXGroup;
 			children = (
 				ACE96E751F4BE660002E0809 /* iMO */,
 				ACE96E741F4BE660002E0809 /* Products */,
+				8BB2ACDD5C3FE571D326BD1F /* Pods */,
+				CE7E8E0A6B13A75BA4FC3045 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +92,33 @@
 		ACE96E751F4BE660002E0809 /* iMO */ = {
 			isa = PBXGroup;
 			children = (
+				AC0B9F031F4D2F5C00179E92 /* API.swift */,
+				AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */,
+				ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */,
 				ACE96E761F4BE660002E0809 /* AppDelegate.swift */,
-				ACE96E781F4BE660002E0809 /* ViewController.swift */,
+				AC0B9F051F4D30BE00179E92 /* Work.graphql */,
 				ACE96E7A1F4BE660002E0809 /* Main.storyboard */,
+				AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */,
+				ACE96E881F4BECD9002E0809 /* Work.swift */,
+				ACE96E8A1F4BEE05002E0809 /* WorkRepository.swift */,
+				AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */,
 				ACE96E7D1F4BE660002E0809 /* Assets.xcassets */,
 				ACE96E7F1F4BE660002E0809 /* LaunchScreen.storyboard */,
 				ACE96E821F4BE660002E0809 /* Info.plist */,
+				ACE74E0D1F4EA36100FEBD49 /* Brain.swift */,
+				ACD1622A1F4FD253005005F9 /* FeedViewController.swift */,
+				ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */,
+				ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */,
 			);
 			path = iMO;
+			sourceTree = "<group>";
+		};
+		CE7E8E0A6B13A75BA4FC3045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9633B3753F94267D032FE3F9 /* Pods_iMO.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +128,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACE96E851F4BE660002E0809 /* Build configuration list for PBXNativeTarget "iMO" */;
 			buildPhases = (
+				C3A06D3ABD2D2C85112DA70C /* [CP] Check Pods Manifest.lock */,
+				AC0B9F021F4D2EE600179E92 /* Generate Apollo GraphQL API */,
 				ACE96E6F1F4BE660002E0809 /* Sources */,
 				ACE96E701F4BE660002E0809 /* Frameworks */,
 				ACE96E711F4BE660002E0809 /* Resources */,
+				688E2D7FC8CACEF9DF9A4251 /* [CP] Embed Pods Frameworks */,
+				174C2E2AB88A60851FF06AC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +157,7 @@
 				TargetAttributes = {
 					ACE96E721F4BE660002E0809 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = N4688663R4;
+						DevelopmentTeam = T22WVA84J3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0B9F061F4D30BE00179E92 /* Work.graphql in Resources */,
 				ACE96E811F4BE660002E0809 /* LaunchScreen.storyboard in Resources */,
 				ACE96E7E1F4BE660002E0809 /* Assets.xcassets in Resources */,
 				ACE96E7C1F4BE660002E0809 /* Main.storyboard in Resources */,
@@ -132,13 +194,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		174C2E2AB88A60851FF06AC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMO/Pods-iMO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		688E2D7FC8CACEF9DF9A4251 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iMO/Pods-iMO-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iMO/Pods-iMO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC0B9F021F4D2EE600179E92 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift";
+		};
+		C3A06D3ABD2D2C85112DA70C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iMO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACE96E6F1F4BE660002E0809 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACE96E791F4BE660002E0809 /* ViewController.swift in Sources */,
+				ACD1622F1F4FFE58005005F9 /* WorkCollectionReusableView.swift in Sources */,
 				ACE96E771F4BE660002E0809 /* AppDelegate.swift in Sources */,
+				AC1A9FC61F4C48FB0012DA25 /* WorkCollectionViewCell.swift in Sources */,
+				ACD1622B1F4FD253005005F9 /* FeedViewController.swift in Sources */,
+				ACE74E0E1F4EA36100FEBD49 /* Brain.swift in Sources */,
+				AC1A9FC21F4BF6410012DA25 /* WorkViewController.swift in Sources */,
+				ACE96E8B1F4BEE05002E0809 /* WorkRepository.swift in Sources */,
+				ACD1622D1F4FF365005005F9 /* FavoritesViewController.swift in Sources */,
+				AC1A9FCA1F4D00090012DA25 /* RecommendationRepository.swift in Sources */,
+				ACE96E891F4BECD9002E0809 /* Work.swift in Sources */,
+				AC0B9F041F4D2F5C00179E92 /* API.swift in Sources */,
+				ACE74E121F4FB0CC00FEBD49 /* GridViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +401,13 @@
 		};
 		ACE96E861F4BE660002E0809 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54251A728D51FCDBCE44D1CA /* Pods-iMO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N4688663R4;
+				DEVELOPMENT_TEAM = T22WVA84J3;
 				INFOPLIST_FILE = iMO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.enden.iMO;
+				PRODUCT_BUNDLE_IDENTIFIER = be.enden.ken.imo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -272,12 +415,13 @@
 		};
 		ACE96E871F4BE660002E0809 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D960544F968F6BDAA26527 /* Pods-iMO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N4688663R4;
+				DEVELOPMENT_TEAM = T22WVA84J3;
 				INFOPLIST_FILE = iMO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.enden.iMO;
+				PRODUCT_BUNDLE_IDENTIFIER = be.enden.ken.imo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -302,6 +446,7 @@
 				ACE96E871F4BE660002E0809 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

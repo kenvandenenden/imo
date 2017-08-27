@@ -1,0 +1,13 @@
+query WorkRecommendations($id: ID!, $limit: Int) {
+    work(id: $id) {
+        recommendations(limit: $limit) {
+            work {
+                id
+                title
+                image {
+                    link(width: 750, height: 750)
+                }
+            }
+        }
+    }
+}
