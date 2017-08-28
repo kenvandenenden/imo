@@ -12,7 +12,7 @@ class WorkViewController: GridViewController {
     @IBAction func favoriteWork(_ sender: Any) {
         if let work = self.work {
             Brain.addFavorite(work: work)
-            print(Brain.favorites.map { work in work.id })
+            print(Brain.favorites?.map { work in work.id })
         }
     }
     

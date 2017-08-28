@@ -8,12 +8,16 @@
 
 import Foundation
 
-struct Work: Equatable {
+struct Work: Equatable, Hashable {
     let id: Int
     let title: String
     let imageURL: URL
     
     static func ==(lhs: Work, rhs: Work) -> Bool {
         return lhs.id == rhs.id
+    }
+    
+    var hashValue: Int {
+        return id
     }
 }

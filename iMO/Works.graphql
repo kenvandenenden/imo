@@ -1,0 +1,11 @@
+query Works($ids: [ID!]!) {
+    works(ids: $ids) {
+        works {
+            id
+            title
+            image {
+                link(width: 750, height: 750)
+            }
+        }
+    }
+}

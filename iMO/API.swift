@@ -234,3 +234,193 @@ public final class WorkRecommendationsQuery: GraphQLQuery {
     }
   }
 }
+
+public final class WorksQuery: GraphQLQuery {
+  public static let operationString =
+    "query Works($ids: [ID!]!) {" +
+    "  works(ids: $ids) {" +
+    "    __typename" +
+    "    works {" +
+    "      __typename" +
+    "      id" +
+    "      title" +
+    "      image {" +
+    "        __typename" +
+    "        link(width: 750, height: 750)" +
+    "      }" +
+    "    }" +
+    "  }" +
+    "}"
+
+  public var ids: [GraphQLID]
+
+  public init(ids: [GraphQLID]) {
+    self.ids = ids
+  }
+
+  public var variables: GraphQLMap? {
+    return ["ids": ids]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("works", arguments: ["ids": Variable("ids")], type: .object(Work.self)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(works: Work? = nil) {
+      self.init(snapshot: ["__typename": "Query", "works": works])
+    }
+
+    /// A set of works
+    public var works: Work? {
+      get {
+        return (snapshot["works"]! as! Snapshot?).flatMap { Work(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "works")
+      }
+    }
+
+    public struct Work: GraphQLSelectionSet {
+      public static let possibleTypes = ["WorkSet"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("works", type: .list(.object(Work.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(works: [Work?]? = nil) {
+        self.init(snapshot: ["__typename": "WorkSet", "works": works])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var works: [Work?]? {
+        get {
+          return (snapshot["works"]! as! [Snapshot?]?).flatMap { $0.map { $0.flatMap { Work(snapshot: $0) } } }
+        }
+        set {
+          snapshot.updateValue(newValue.flatMap { $0.map { $0.flatMap { $0.snapshot } } }, forKey: "works")
+        }
+      }
+
+      public struct Work: GraphQLSelectionSet {
+        public static let possibleTypes = ["Work"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("title", type: .nonNull(.scalar(String.self))),
+          GraphQLField("image", type: .nonNull(.object(Image.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID? = nil, title: String, image: Image) {
+          self.init(snapshot: ["__typename": "Work", "id": id, "title": title, "image": image])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return snapshot["id"]! as! GraphQLID?
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        /// The title
+        public var title: String {
+          get {
+            return snapshot["title"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "title")
+          }
+        }
+
+        /// The work image
+        public var image: Image {
+          get {
+            return Image(snapshot: snapshot["image"]! as! Snapshot)
+          }
+          set {
+            snapshot.updateValue(newValue.snapshot, forKey: "image")
+          }
+        }
+
+        public struct Image: GraphQLSelectionSet {
+          public static let possibleTypes = ["Image"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("link", arguments: ["width": 750, "height": 750], type: .nonNull(.scalar(String.self))),
+          ]
+
+          public var snapshot: Snapshot
+
+          public init(snapshot: Snapshot) {
+            self.snapshot = snapshot
+          }
+
+          public init(link: String) {
+            self.init(snapshot: ["__typename": "Image", "link": link])
+          }
+
+          public var __typename: String {
+            get {
+              return snapshot["__typename"]! as! String
+            }
+            set {
+              snapshot.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          /// Link to the image on imagehaus
+          public var link: String {
+            get {
+              return snapshot["link"]! as! String
+            }
+            set {
+              snapshot.updateValue(newValue, forKey: "link")
+            }
+          }
+        }
+      }
+    }
+  }
+}

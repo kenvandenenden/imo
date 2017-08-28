@@ -25,19 +25,19 @@ class FeedViewController: GridViewController {
     }
     
     var numberOfWorks = 96
-    let workRepository = WorkRepository.foundFeed
+    let workRepository = WorkRepository.redbubble
     let recommendationRepository = RecommendationRepository.init()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadWorks()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadWorks()
+        //        loadWorks()
     }
     
     func loadWorks() {
@@ -54,7 +54,6 @@ class FeedViewController: GridViewController {
                 self.foundFeedWorks = self.workRepository.fetchWorks(limit: self.numberOfWorks)
             }
             DispatchQueue.main.async {
-                self.collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: UICollectionViewScrollPosition.top, animated: true)
                 self.works = self.foundFeedWorks
             }
         }
@@ -62,10 +61,13 @@ class FeedViewController: GridViewController {
     
     func loadYourFeedWorks() {
         DispatchQueue.global(qos: .userInitiated).async {
-            let works = self.recommendationRepository.recommendedWorks(for: Brain.favorites, limit: self.numberOfWorks)
-            DispatchQueue.main.async {
-                self.collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: UICollectionViewScrollPosition.top, animated: true)
-                self.works = works
+            if let favorites = Brain.favorites {
+                let works = self.recommendationRepository.recommendedWorks(for: favorites, limit: self.numberOfWorks)
+                
+                DispatchQueue.main.async {
+                    //                self.collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: UICollectionViewScrollPosition.top, animated: true)
+                    self.works = works
+                }
             }
         }
     }

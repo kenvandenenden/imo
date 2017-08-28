@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		1EAB2DE438BA7A5196F82964 /* Pods_iMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9633B3753F94267D032FE3F9 /* Pods_iMO.framework */; };
 		AC0B9F041F4D2F5C00179E92 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B9F031F4D2F5C00179E92 /* API.swift */; };
-		AC0B9F061F4D30BE00179E92 /* Work.graphql in Resources */ = {isa = PBXBuildFile; fileRef = AC0B9F051F4D30BE00179E92 /* Work.graphql */; };
 		AC1A9FC21F4BF6410012DA25 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */; };
 		AC1A9FC61F4C48FB0012DA25 /* WorkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */; };
 		AC1A9FCA1F4D00090012DA25 /* RecommendationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */; };
 		ACD1622B1F4FD253005005F9 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622A1F4FD253005005F9 /* FeedViewController.swift */; };
 		ACD1622D1F4FF365005005F9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */; };
 		ACD1622F1F4FFE58005005F9 /* WorkCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */; };
+		ACD909921F53D6540003BAB1 /* Works.graphql in Resources */ = {isa = PBXBuildFile; fileRef = ACD909911F53D6540003BAB1 /* Works.graphql */; };
+		ACD909941F53D6B00003BAB1 /* WorkRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = ACD909931F53D6B00003BAB1 /* WorkRecommendations.graphql */; };
 		ACE74E0E1F4EA36100FEBD49 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E0D1F4EA36100FEBD49 /* Brain.swift */; };
 		ACE74E121F4FB0CC00FEBD49 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */; };
 		ACE96E771F4BE660002E0809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E761F4BE660002E0809 /* AppDelegate.swift */; };
@@ -30,13 +31,14 @@
 		54251A728D51FCDBCE44D1CA /* Pods-iMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iMO/Pods-iMO.debug.xcconfig"; sourceTree = "<group>"; };
 		9633B3753F94267D032FE3F9 /* Pods_iMO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0B9F031F4D2F5C00179E92 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		AC0B9F051F4D30BE00179E92 /* Work.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Work.graphql; sourceTree = "<group>"; };
 		AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationRepository.swift; sourceTree = "<group>"; };
 		ACD1622A1F4FD253005005F9 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionReusableView.swift; sourceTree = "<group>"; };
+		ACD909911F53D6540003BAB1 /* Works.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Works.graphql; sourceTree = "<group>"; };
+		ACD909931F53D6B00003BAB1 /* WorkRecommendations.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorkRecommendations.graphql; sourceTree = "<group>"; };
 		ACE74E0D1F4EA36100FEBD49 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		ACE96E731F4BE660002E0809 /* iMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,9 +98,9 @@
 				AC1A9FC11F4BF6410012DA25 /* WorkViewController.swift */,
 				ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */,
 				ACE96E761F4BE660002E0809 /* AppDelegate.swift */,
-				AC0B9F051F4D30BE00179E92 /* Work.graphql */,
 				ACE96E7A1F4BE660002E0809 /* Main.storyboard */,
 				AC1A9FC51F4C48FB0012DA25 /* WorkCollectionViewCell.swift */,
+				ACD909931F53D6B00003BAB1 /* WorkRecommendations.graphql */,
 				ACE96E881F4BECD9002E0809 /* Work.swift */,
 				ACE96E8A1F4BEE05002E0809 /* WorkRepository.swift */,
 				AC1A9FC91F4D00090012DA25 /* RecommendationRepository.swift */,
@@ -109,6 +111,7 @@
 				ACD1622A1F4FD253005005F9 /* FeedViewController.swift */,
 				ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */,
 				ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */,
+				ACD909911F53D6540003BAB1 /* Works.graphql */,
 			);
 			path = iMO;
 			sourceTree = "<group>";
@@ -185,10 +188,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC0B9F061F4D30BE00179E92 /* Work.graphql in Resources */,
 				ACE96E811F4BE660002E0809 /* LaunchScreen.storyboard in Resources */,
 				ACE96E7E1F4BE660002E0809 /* Assets.xcassets in Resources */,
+				ACD909941F53D6B00003BAB1 /* WorkRecommendations.graphql in Resources */,
 				ACE96E7C1F4BE660002E0809 /* Main.storyboard in Resources */,
+				ACD909921F53D6540003BAB1 /* Works.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

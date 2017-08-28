@@ -10,7 +10,7 @@ import Foundation
 import Apollo
 
 class RecommendationRepository {
-    private let repository = WorkRepository.foundFeed
+    static let guru = RecommendationRepository()
     
     private let apollo = ApolloClient(url: URL(string: "https://guru-playground.us-east-1.staging.bubblesof.red/graphql")!)
     
@@ -22,12 +22,38 @@ class RecommendationRepository {
         return recommendations(for: works, limit: limit)
     }
     
+    func works(ids: [Int]) -> [Work] {
+        let dispatch = DispatchGroup()
+        dispatch.enter()
+        
+        var allWorks = [Work]()
+        apollo.fetch(query: WorksQuery(ids: ids.map { String($0) })) { (result, error) in
+            if let works = result?.data?.works?.works {
+                
+                let res: [Work] = works.map {
+                    let work = $0!
+                    
+                    let id = work.id!
+                    let title = work.title
+                    let link = work.image.link
+                    
+                    return Work(id: Int(id)!, title: title, imageURL: URL(string: link)!)
+                }
+                
+                allWorks.append(contentsOf: res)
+            }
+            dispatch.leave()
+        }
+        dispatch.wait()
+        return allWorks
+    }
+    
     private func recommendations(for work: Work, limit: Int) -> [Work] {
         let dispatch = DispatchGroup()
         dispatch.enter()
         
         var recommendedWorks = [Work]()
-        apollo.fetch(query: WorkRecommendationsQuery(id: String(work.id), limit: 24)) { (result, error) in
+        apollo.fetch(query: WorkRecommendationsQuery(id: String(work.id), limit: limit)) { (result, error) in
             if let recommendations = result?.data?.work?.recommendations {
             
                 let rec: [Work] = recommendations.map {
@@ -53,9 +79,11 @@ class RecommendationRepository {
         
         var recommendedWorks = [Work]()
         
-        for id in works.map({ work in String(work.id) }) {
+        let selectedWorks = sample(works, n: 16)
+        
+        for id in selectedWorks.map({ work in String(work.id) }) {
             dispatch.enter()
-            apollo.fetch(query: WorkRecommendationsQuery(id: id, limit: 24)) { (result, error) in
+            apollo.fetch(query: WorkRecommendationsQuery(id: id, limit: 2 * limit / selectedWorks.count)) { (result, error) in
                 if let recommendations = result?.data?.work?.recommendations {
                     let rec: [Work] = recommendations.flatMap{$0}.map {
                         let work = $0.work!
@@ -73,8 +101,7 @@ class RecommendationRepository {
             }
         }
         dispatch.wait()
-        //        TODO: Remove duplicates
-        
+        recommendedWorks = Array(Set<Work>(recommendedWorks))
         return sample(recommendedWorks, n: limit)
     }
     

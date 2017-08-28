@@ -9,16 +9,16 @@
 import Foundation
 
 class WorkRepository {
-    static let foundFeed = WorkRepository(url: URL(string: "https://icarus.redbubble.net/v2/collections/found/feed?country=AU&currency=AUD")!)
+    static let redbubble = WorkRepository(feedUrl: URL(string: "https://icarus.redbubble.net/v2/collections/found/feed?country=AU&currency=AUD")!)
     
-    var url: URL
+    private var feedUrl: URL
     
-    init(url: URL) {
-        self.url = url
+    init(feedUrl: URL) {
+        self.feedUrl = feedUrl
     }
     
     func fetchWorks(limit: Int = 48) -> [Work] {
-        guard let url = URL(string: self.url.absoluteString + "&count=\(limit)"),
+        guard let url = URL(string: self.feedUrl.absoluteString + "&count=\(limit)"),
         let json = try? String(contentsOf: url) else {
             return [Work]()
         }
@@ -27,24 +27,31 @@ class WorkRepository {
         return works
     }
     
+    func fetchWorkDetails(works: [Int]) -> [Work] {
+        return RecommendationRepository.guru.works(ids: works)
+    }
+    
     private func decodeWorks(_ jsonString: String) -> [Work] {
         guard let jsonData = jsonString.data(using: .utf8),
-        let json = try? JSONSerialization.jsonObject(with: jsonData) as? [String:AnyObject],
-        let data = json?["data"] as? [[String:AnyObject]] else {
-            return [Work]()
+            let json = try? JSONSerialization.jsonObject(with: jsonData) as? [String:AnyObject],
+            let data = json?["data"] as? [[String:AnyObject]] else { return [Work]() }
+        
+        let works: [Work] = data.map { decode(work: $0) }.flatMap { $0 }
+        return fetchWorkDetails(works: works.map { $0.id })
+//        return works
+    }
+    
+    private func decode(work: [String:AnyObject]) -> Work? {
+        guard let id = work["work_id"] as? String,
+        let title = work["title"] as? String,
+        let imageURL = work["work_url"] as? String else {
+            return nil
         }
         
-        let works: [Work] = data.map {
-            let id = $0["work_id"] as! String
-            let title = $0["title"] as! String
-            let imageURL = $0["work_url"] as! String
-            
-            return Work(
-                id: Int(id)!,
-                title: title,
-                imageURL: URL(string: imageURL)!
-            )
-        }
-        return works
+        return Work(
+            id: Int(id)!,
+            title: title,
+            imageURL: URL(string: imageURL)!
+        )
     }
 }
