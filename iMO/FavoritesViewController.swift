@@ -8,10 +8,11 @@
 
 import UIKit
 
-class FavoritesViewController: GridViewController {
-    
+class FavoritesViewController: GridViewController, BrainDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        Brain.setDelegate(self)
+        
         DispatchQueue.global(qos: .userInitiated).async {
             self.works = Brain.favorites
             self.updateUI()
@@ -24,5 +25,10 @@ class FavoritesViewController: GridViewController {
             self.works = Brain.favorites
             self.updateUI()
         }
+    }
+    
+    func didUpdateFavorites() {
+        self.works = Brain.favorites
+        self.updateUI()
     }
 }

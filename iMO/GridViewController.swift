@@ -45,7 +45,7 @@ extension GridViewController: UICollectionViewDataSource {
         if let count = works?.count {
             return count
         } else {
-            return 15
+            return 0
         }
     }
     

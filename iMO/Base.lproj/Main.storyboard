@@ -111,7 +111,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2gf-5N-S0f">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zdi-MW-TSc">
+                        <barButtonItem key="rightBarButtonItem" image="icon-heart-white" id="Zdi-MW-TSc">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                    <color key="value" red="1" green="0.37254901959999998" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="favoriteWork:" destination="BYZ-38-t0r" id="4RZ-Z6-xiB"/>
                             </connections>
@@ -119,6 +124,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="drR-T1-Zg1" id="vaD-4N-C0a"/>
+                        <outlet property="favoriteButton" destination="Zdi-MW-TSc" id="9LP-Nk-WzQ"/>
                         <outlet property="spinner" destination="X7j-2E-WY0" id="hNh-ck-QtK"/>
                     </connections>
                 </viewController>
@@ -207,6 +213,11 @@
                                 <segment title="Found Feed"/>
                                 <segment title="Your Feed"/>
                             </segments>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                    <color key="value" red="1" green="0.37254901959999998" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="changeFeed:" destination="U55-Ge-3wl" eventType="valueChanged" id="T9h-YU-CzZ"/>
                             </connections>
@@ -230,6 +241,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.37254901959999998" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="bG2-o3-5gS" kind="relationship" relationship="viewControllers" id="M7S-hc-hjs"/>
@@ -321,11 +337,11 @@
             </objects>
             <point key="canvasLocation" x="-1696.8" y="1044.8275862068967"/>
         </scene>
-        <!--Feed-->
+        <!--Explore-->
         <scene sceneID="yQr-pr-yxU">
             <objects>
                 <navigationController storyboardIdentifier="feedNavigation" automaticallyAdjustsScrollViewInsets="NO" id="bG2-o3-5gS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="0hS-Ll-g7f"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="icon-explore" selectedImage="icon-explore-active" id="0hS-Ll-g7f"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZrF-u4-Nje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -344,7 +360,7 @@
         <scene sceneID="90W-Ds-rqs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dF0-GE-zu3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="hks-Dq-7tL"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="icon-favourite" selectedImage="icon-favourite-active" id="hks-Dq-7tL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EvM-bb-BXx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -360,4 +376,11 @@
             <point key="canvasLocation" x="-2636" y="1044.8275862068967"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-explore" width="40" height="40"/>
+        <image name="icon-explore-active" width="40" height="40"/>
+        <image name="icon-favourite" width="40" height="40"/>
+        <image name="icon-favourite-active" width="40" height="40"/>
+        <image name="icon-heart-white" width="40" height="40"/>
+    </resources>
 </document>

@@ -11,10 +11,17 @@ import UIKit
 class WorkViewController: GridViewController {
     @IBAction func favoriteWork(_ sender: Any) {
         if let work = self.work {
-            Brain.addFavorite(work: work)
-            print(Brain.favorites?.map { work in work.id })
+            if Brain.favorites?.contains(work) ?? false {
+                Brain.removeFavorite(work: work)
+            } else {
+                Brain.addFavorite(work: work)
+            }
+            updateUI()
+            print(Brain.favorites?.map { work in work.id } ?? "no favorites")
         }
     }
+    
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     var numberOfRecommendations = 96
     
@@ -26,8 +33,20 @@ class WorkViewController: GridViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func updateUI() {
+        super.updateUI()
+        
+        if let work = self.work, let favorites = Brain.favorites {
+            DispatchQueue.main.async { [weak self] in
+                if favorites.contains(work) {
+                    self?.favoriteButton.image = UIImage(named: "icon-heart-filled")
+//                    self?.favoriteButton.tintColor = UIColor.RBRed()
+                } else {
+                    self?.favoriteButton.image = UIImage(named: "icon-heart")
+//                    self?.favoriteButton.tintColor = nil
+                }
+            }
+        }
     }
     
     let recommendationRepository = RecommendationRepository()

@@ -8,13 +8,27 @@
 
 import Foundation
 
+protocol BrainDelegate: class {
+    func didUpdateFavorites();
+}
+
 class Brain {
     static let brain = Brain()
     
-    var favorites: [Work]?
+    private var favorites: [Work]?
+    
+    static func setDelegate(_ delegate: BrainDelegate) {
+        brain.delegate = delegate
+    }
+    
+    private weak var delegate: BrainDelegate?
     
     static func addFavorite(work: Work) {
         brain.addFavorite(work: work)
+    }
+    
+    static func removeFavorite(work: Work) {
+        brain.removeFavorite(work: work)
     }
     
     static var favorites: [Work]? {
@@ -23,12 +37,14 @@ class Brain {
     
     private init() {
         if let workIds = UserDefaults.standard.array(forKey: "favorites") as? [Int] {
-            
-            let loadedFavorites = WorkRepository.redbubble.fetchWorkDetails(works: workIds)
-            if let favorites = favorites {
-                self.favorites = loadedFavorites + favorites
-            } else {
-                self.favorites = loadedFavorites
+            DispatchQueue.global(qos: .userInitiated).async {
+                let loadedFavorites = WorkRepository.redbubble.fetchWorkDetails(works: workIds)
+                if let favorites = self.favorites {
+                    self.favorites = loadedFavorites + favorites
+                } else {
+                    self.favorites = loadedFavorites
+                }
+                self.delegate?.didUpdateFavorites()
             }
         } else {
             self.favorites = [Work]()
@@ -47,18 +63,20 @@ class Brain {
 //        coder.encode(data, forKey: "favorites")
 //    }
     
-    func addFavorite(work: Work) {
+    private func addFavorite(work: Work) {
         if favorites == nil {
             favorites = [Work]()
         }
         favorites?.append(work)
         save()
+        delegate?.didUpdateFavorites()
     }
     
-    func removeFavorite(work: Work) {
+    private func removeFavorite(work: Work) {
         if let index = favorites?.index(where: { $0.id == work.id }) {
             favorites?.remove(at: index)
             save()
+            delegate?.didUpdateFavorites()
         }
     }
     

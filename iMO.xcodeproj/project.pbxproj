@@ -17,6 +17,7 @@
 		ACD1622F1F4FFE58005005F9 /* WorkCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */; };
 		ACD909921F53D6540003BAB1 /* Works.graphql in Resources */ = {isa = PBXBuildFile; fileRef = ACD909911F53D6540003BAB1 /* Works.graphql */; };
 		ACD909941F53D6B00003BAB1 /* WorkRecommendations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = ACD909931F53D6B00003BAB1 /* WorkRecommendations.graphql */; };
+		ACD909961F54E8AE0003BAB1 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD909951F54E8AE0003BAB1 /* Color.swift */; };
 		ACE74E0E1F4EA36100FEBD49 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E0D1F4EA36100FEBD49 /* Brain.swift */; };
 		ACE74E121F4FB0CC00FEBD49 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */; };
 		ACE96E771F4BE660002E0809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE96E761F4BE660002E0809 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCollectionReusableView.swift; sourceTree = "<group>"; };
 		ACD909911F53D6540003BAB1 /* Works.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Works.graphql; sourceTree = "<group>"; };
 		ACD909931F53D6B00003BAB1 /* WorkRecommendations.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WorkRecommendations.graphql; sourceTree = "<group>"; };
+		ACD909951F54E8AE0003BAB1 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		ACE74E0D1F4EA36100FEBD49 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		ACE74E111F4FB0CC00FEBD49 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		ACE96E731F4BE660002E0809 /* iMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				ACD1622C1F4FF365005005F9 /* FavoritesViewController.swift */,
 				ACD1622E1F4FFE58005005F9 /* WorkCollectionReusableView.swift */,
 				ACD909911F53D6540003BAB1 /* Works.graphql */,
+				ACD909951F54E8AE0003BAB1 /* Color.swift */,
 			);
 			path = iMO;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				ACE96E771F4BE660002E0809 /* AppDelegate.swift in Sources */,
 				AC1A9FC61F4C48FB0012DA25 /* WorkCollectionViewCell.swift in Sources */,
 				ACD1622B1F4FD253005005F9 /* FeedViewController.swift in Sources */,
+				ACD909961F54E8AE0003BAB1 /* Color.swift in Sources */,
 				ACE74E0E1F4EA36100FEBD49 /* Brain.swift in Sources */,
 				AC1A9FC21F4BF6410012DA25 /* WorkViewController.swift in Sources */,
 				ACE96E8B1F4BEE05002E0809 /* WorkRepository.swift in Sources */,
